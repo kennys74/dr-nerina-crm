@@ -29,9 +29,9 @@ function* loginUser({ payload: { user, history } }) {
         password: user.password,
       })
       const authUser = {
-        username: response.name,
-        email: response.email,
-        accessToken: "Bearer " + response.accessToken,
+        username: response.authUser.name,
+        email: response.authUser.email,
+        accessToken: "Bearer " + response.authUser.accessToken,
       }
       localStorage.setItem("authUser", JSON.stringify(authUser))
       yield put(loginSuccess(response))

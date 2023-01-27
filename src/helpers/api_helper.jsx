@@ -1,6 +1,6 @@
 import axios from "axios";
 //pass new generated access token here
-const authUser = localStorage.getItem("authUser")
+const authUser = JSON.parse(localStorage.getItem("authUser"))
 const token = authUser && authUser.accessToken
 
 //apply base url for axios
