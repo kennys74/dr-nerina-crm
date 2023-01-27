@@ -1,8 +1,7 @@
 import axios from "axios";
-import accessToken from "./jwt-token-access/accessToken";
-
 //pass new generated access token here
-const token = accessToken;
+const authUser = localStorage.getItem("authUser")
+const token = authUser && authUser.accessToken
 
 //apply base url for axios
 const API_URL = "https://whatsapp-chatbot-1-cws.herokuapp.com/";
