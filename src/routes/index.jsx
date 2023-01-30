@@ -1,125 +1,105 @@
-import React from "react";
-import { Redirect } from "react-router-dom";
+import React from "react"
+import { Redirect } from "react-router-dom"
 
 // // Profile
-import UserProfile from "../pages/Authentication/user-profile";
+import UserProfile from "../pages/Authentication/user-profile"
 
 // // Authentication related pages
-import Login from "../pages/Authentication/Login";
-import Logout from "../pages/Authentication/Logout";
-import Register from "../pages/Authentication/Register";
-import ForgetPwd from "../pages/Authentication/ForgetPassword";
+import Login from "../pages/Authentication/Login"
+import Logout from "../pages/Authentication/Logout"
+import Register from "../pages/Authentication/Register"
+import ForgetPwd from "../pages/Authentication/ForgetPassword"
 
 // //  // Inner Authentication
-import Login1 from "../pages/AuthenticationInner/Login";
-import Login2 from "../pages/AuthenticationInner/Login2";
-import Register1 from "../pages/AuthenticationInner/Register";
-import Register2 from "../pages/AuthenticationInner/Register2";
-import Recoverpw from "../pages/AuthenticationInner/Recoverpw";
-import Recoverpw2 from "../pages/AuthenticationInner/Recoverpw2";
-import ForgetPwd1 from "../pages/AuthenticationInner/ForgetPassword";
-import ForgetPwd2 from "../pages/AuthenticationInner/ForgetPassword2";
-import LockScreen from "../pages/AuthenticationInner/auth-lock-screen";
-import LockScreen2 from "../pages/AuthenticationInner/auth-lock-screen-2";
-import ConfirmMail from "../pages/AuthenticationInner/page-confirm-mail";
-import ConfirmMail2 from "../pages/AuthenticationInner/page-confirm-mail-2";
-import EmailVerification from "../pages/AuthenticationInner/auth-email-verification";
-import EmailVerification2 from "../pages/AuthenticationInner/auth-email-verification-2";
-import TwostepVerification from "../pages/AuthenticationInner/auth-two-step-verification";
-import TwostepVerification2 from "../pages/AuthenticationInner/auth-two-step-verification-2";
+import Login1 from "../pages/AuthenticationInner/Login"
+import Login2 from "../pages/AuthenticationInner/Login2"
+import Register1 from "../pages/AuthenticationInner/Register"
+import Register2 from "../pages/AuthenticationInner/Register2"
+import Recoverpw from "../pages/AuthenticationInner/Recoverpw"
+import Recoverpw2 from "../pages/AuthenticationInner/Recoverpw2"
+import ForgetPwd1 from "../pages/AuthenticationInner/ForgetPassword"
+import ForgetPwd2 from "../pages/AuthenticationInner/ForgetPassword2"
+import LockScreen from "../pages/AuthenticationInner/auth-lock-screen"
+import LockScreen2 from "../pages/AuthenticationInner/auth-lock-screen-2"
+import ConfirmMail from "../pages/AuthenticationInner/page-confirm-mail"
+import ConfirmMail2 from "../pages/AuthenticationInner/page-confirm-mail-2"
+import EmailVerification from "../pages/AuthenticationInner/auth-email-verification"
+import EmailVerification2 from "../pages/AuthenticationInner/auth-email-verification-2"
+import TwostepVerification from "../pages/AuthenticationInner/auth-two-step-verification"
+import TwostepVerification2 from "../pages/AuthenticationInner/auth-two-step-verification-2"
 
 // // Dashboard
-import Dashboard from "../pages/Dashboard/index";
+import Dashboard from "../pages/Dashboard/index"
 
 // //Icons
-import IconBoxicons from "../pages/Icons/IconBoxicons";
-import IconDripicons from "../pages/Icons/IconDripicons";
-import IconMaterialdesign from "../pages/Icons/IconMaterialdesign";
-import IconFontawesome from "../pages/Icons/IconFontawesome";
+import IconBoxicons from "../pages/Icons/IconBoxicons"
+import IconDripicons from "../pages/Icons/IconDripicons"
+import IconMaterialdesign from "../pages/Icons/IconMaterialdesign"
+import IconFontawesome from "../pages/Icons/IconFontawesome"
 
 // //Tables
-import BasicTables from "../pages/Tables/BasicTables";
-import DatatableTables from "../pages/Tables/DatatableTables";
-import ResponsiveTables from "../pages/Tables/ResponsiveTables";
-import EditableTables from "../pages/Tables/EditableTables";
-import DragDropTables from "../pages/Tables/DragDropTables";
+import BasicTables from "../pages/Tables/BasicTables"
+import DatatableTables from "../pages/Tables/DatatableTables"
+import ResponsiveTables from "../pages/Tables/ResponsiveTables"
+import EditableTables from "../pages/Tables/EditableTables"
+import DragDropTables from "../pages/Tables/DragDropTables"
 
 // // Forms
-import FormElements from "../pages/Forms/FormElements";
-import FormLayouts from "../pages/Forms/FormLayouts";
-import FormAdvanced from "../pages/Forms/FormAdvanced";
-import FormEditors from "../pages/Forms/FormEditors";
-import FormValidations from "../pages/Forms/FormValidations";
-import FormMask from "../pages/Forms/FormMask";
-import FormRepeater from "../pages/Forms/FormRepeater";
-import FormUpload from "../pages/Forms/FormUpload";
-import FormWizard from "../pages/Forms/FormWizard";
-import FormXeditable from "../pages/Forms/FormXeditable";
-import DualListbox from "../pages/Tables/DualListbox";
+import FormElements from "../pages/Forms/FormElements"
+import FormLayouts from "../pages/Forms/FormLayouts"
+import FormAdvanced from "../pages/Forms/FormAdvanced"
+import FormEditors from "../pages/Forms/FormEditors"
+import FormValidations from "../pages/Forms/FormValidations"
+import FormMask from "../pages/Forms/FormMask"
+import FormRepeater from "../pages/Forms/FormRepeater"
+import FormUpload from "../pages/Forms/FormUpload"
+import FormWizard from "../pages/Forms/FormWizard"
+import FormXeditable from "../pages/Forms/FormXeditable"
+import DualListbox from "../pages/Tables/DualListbox"
 
 // //Ui
-import UiAlert from "../pages/Ui/UiAlert";
-import UiButtons from "../pages/Ui/UiButtons";
-import UiCards from "../pages/Ui/UiCards";
-import UiCarousel from "../pages/Ui/UiCarousel";
-import UiColors from "../pages/Ui/UiColors";
-import UiDropdown from "../pages/Ui/UiDropdown";
-import UiOffCanvas from "../pages/Ui/UiOffCanvas";
+import UiAlert from "../pages/Ui/UiAlert"
+import UiButtons from "../pages/Ui/UiButtons"
+import UiCards from "../pages/Ui/UiCards"
+import UiCarousel from "../pages/Ui/UiCarousel"
+import UiColors from "../pages/Ui/UiColors"
+import UiDropdown from "../pages/Ui/UiDropdown"
+import UiOffCanvas from "../pages/Ui/UiOffCanvas"
 
-import UiGeneral from "../pages/Ui/UiGeneral";
-import UiGrid from "../pages/Ui/UiGrid";
-import UiImages from "../pages/Ui/UiImages";
-import UiLightbox from "../pages/Ui/UiLightbox";
-import UiModal from "../pages/Ui/UiModal";
-import UiProgressbar from "../pages/Ui/UiProgressbar";
+import UiGeneral from "../pages/Ui/UiGeneral"
+import UiGrid from "../pages/Ui/UiGrid"
+import UiImages from "../pages/Ui/UiImages"
+import UiLightbox from "../pages/Ui/UiLightbox"
+import UiModal from "../pages/Ui/UiModal"
+import UiProgressbar from "../pages/Ui/UiProgressbar"
 
-import UiTabsAccordions from "../pages/Ui/UiTabsAccordions";
-import UiTypography from "../pages/Ui/UiTypography";
-import UiVideo from "../pages/Ui/UiVideo";
-import UiSessionTimeout from "../pages/Ui/UiSessionTimeout";
-import UiRating from "../pages/Ui/UiRating";
-import UiRangeSlider from "../pages/Ui/UiRangeSlider";
-import UiNotifications from "../pages/Ui/UINotifications";
+import UiTabsAccordions from "../pages/Ui/UiTabsAccordions"
+import UiTypography from "../pages/Ui/UiTypography"
+import UiVideo from "../pages/Ui/UiVideo"
+import UiSessionTimeout from "../pages/Ui/UiSessionTimeout"
+import UiRating from "../pages/Ui/UiRating"
+import UiRangeSlider from "../pages/Ui/UiRangeSlider"
+import UiNotifications from "../pages/Ui/UINotifications"
 
-import UiPlaceholders from "../pages/Ui/UiPlaceholders";
-import UiToasts from "../pages/Ui/UiToast";
-import UiUtilities from "../pages/Ui/UiUtilities";
+import UiPlaceholders from "../pages/Ui/UiPlaceholders"
+import UiToasts from "../pages/Ui/UiToast"
+import UiUtilities from "../pages/Ui/UiUtilities"
 
 // //Pages
-import PagesStarter from "../pages/Utility/pages-starter";
-import PagesMaintenance from "../pages/Utility/pages-maintenance";
-import PagesComingsoon from "../pages/Utility/pages-comingsoon";
-import PagesTimeline from "../pages/Utility/pages-timeline";
-import PagesFaqs from "../pages/Utility/pages-faqs";
-import PagesPricing from "../pages/Utility/pages-pricing";
-import Pages404 from "../pages/Utility/pages-404";
-import Pages500 from "../pages/Utility/pages-500";
-
-// //Contacts
-import ContactsGrid from "../pages/Contacts/contacts-grid";
-import ContactsList from "../pages/Contacts/ContactList/contacts-list";
-import ContactsProfile from "../pages/Contacts/ContactsProfile/contacts-profile";
-
-// //Clients
-import ClientsGrid from "../pages/Clients/clients-grid";
-import ClientsList from "../pages/Clients/ClientList/clients-list";
-import ClientsProfile from "../pages/Clients/ClientsProfile/clients-profile";
+import PagesStarter from "../pages/Utility/pages-starter"
+import PagesMaintenance from "../pages/Utility/pages-maintenance"
+import PagesComingsoon from "../pages/Utility/pages-comingsoon"
+import PagesTimeline from "../pages/Utility/pages-timeline"
+import PagesFaqs from "../pages/Utility/pages-faqs"
+import PagesPricing from "../pages/Utility/pages-pricing"
+import Pages404 from "../pages/Utility/pages-404"
+import Pages500 from "../pages/Utility/pages-500"
 
 const authProtectedRoutes = [
   { path: "/dashboard", component: Dashboard },
 
   //   // //profile
   { path: "/profile", component: UserProfile },
-
-  // Contacts
-  { path: "/contacts-grid", component: ContactsGrid },
-  { path: "/contacts-list", component: ContactsList },
-  { path: "/contacts-profile", component: ContactsProfile },
-
-  // Client
-  { path: "/clients-grid", component: ClientsGrid },
-  { path: "/clients-list", component: ClientsList },
-  { path: "/clients-profile", component: ClientsProfile },
 
   //   // Icons
   { path: "/icons-boxicons", component: IconBoxicons },
@@ -181,7 +161,7 @@ const authProtectedRoutes = [
   //   // this route should be at the end of all other routes
   //   // eslint-disable-next-line react/display-name
   { path: "/", exact: true, component: () => <Redirect to="/dashboard" /> },
-];
+]
 
 const publicRoutes = [
   { path: "/logout", component: Logout },
@@ -211,6 +191,6 @@ const publicRoutes = [
   { path: "/auth-email-verification-2", component: EmailVerification2 },
   { path: "/auth-two-step-verification", component: TwostepVerification },
   { path: "/auth-two-step-verification-2", component: TwostepVerification2 },
-];
+]
 
-export { authProtectedRoutes, publicRoutes };
+export { authProtectedRoutes, publicRoutes }

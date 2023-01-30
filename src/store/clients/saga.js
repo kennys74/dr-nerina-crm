@@ -1,4 +1,4 @@
-import { call, put, takeEvery } from "redux-saga/effects";
+import { call, put, takeEvery } from "redux-saga/effects"
 
 import {
   GET_CLIENTS,
@@ -6,7 +6,7 @@ import {
   ADD_NEW_CLIENT,
   DELETE_CLIENT,
   UPDATE_CLIENT,
-} from "./actionTypes";
+} from "./actionTypes"
 
 import {
   getClientsSuccess,
@@ -19,38 +19,38 @@ import {
   updateClientFail,
   deleteClientSuccess,
   deleteClientFail,
-} from "./actions";
+} from "./actions"
 
-import { getClients } from "../../helpers/backend_helper";
+import { getClients } from "../../helpers/backend_helper"
 
 //Include Both Helper File with needed methods
-import { del, get, post, update } from "../../helpers/api_helper";
-import * as url from "../../helpers/url_helper";
+import { del, get, post, update } from "../../helpers/api_helper"
+import * as url from "../../helpers/url_helper"
 
 function* fetchClients() {
   try {
-    const response = yield call(getClients);
-    yield put(getClientsSuccess(response));
+    const response = yield call(getClients)
+    yield put(getClientsSuccess(response))
   } catch (error) {
-    yield put(getClientsFail(error));
+    yield put(getClientsFail(error))
   }
 }
 
 function* fetchClientProfile() {
   try {
-    const response = yield call(get(url.GET_CLIENT_PROFILE));
-    yield put(getClientProfileSuccess(response));
+    const response = yield call(get(url.GET_CLIENT_PROFILE))
+    yield put(getClientProfileSuccess(response))
   } catch (error) {
-    yield put(getClientProfileFail(error));
+    yield put(getClientProfileFail(error))
   }
 }
 
 function* onUpdateClient({ payload: client }) {
   try {
-    const response = yield call(update(url.UPDATE_CLIENT, client), client);
-    yield put(updateClientSuccess(response));
+    const response = yield call(update(url.UPDATE_CLIENT, client), client)
+    yield put(updateClientSuccess(response))
   } catch (error) {
-    yield put(updateClientFail(error));
+    yield put(updateClientFail(error))
   }
 }
 
@@ -59,29 +59,29 @@ function* onDeleteClient({ payload: client }) {
     const response = yield call(
       del(url.DELETE_CLIENT, { headers: { client } }),
       client
-    );
-    yield put(deleteClientSuccess(response));
+    )
+    yield put(deleteClientSuccess(response))
   } catch (error) {
-    yield update(deleteClientFail(error));
+    yield update(deleteClientFail(error))
   }
 }
 
 function* onAddNewClient({ payload: client }) {
   try {
-    const response = yield call(post(url.ADD_NEW_CLIENT, client), client);
+    const response = yield call(post(url.ADD_NEW_CLIENT, client), client)
 
-    yield put(addClientSuccess(response));
+    yield put(addClientSuccess(response))
   } catch (error) {
-    yield put(addClientFail(error));
+    yield put(addClientFail(error))
   }
 }
 
 function* clientsSaga() {
-  yield takeEvery(GET_CLIENTS, fetchClients);
-  yield takeEvery(GET_CLIENT_PROFILE, fetchClientProfile);
-  yield takeEvery(ADD_NEW_CLIENT, onAddNewClient);
-  yield takeEvery(UPDATE_CLIENT, onUpdateClient);
-  yield takeEvery(DELETE_CLIENT, onDeleteClient);
+  yield takeEvery(GET_CLIENTS, fetchClients)
+  yield takeEvery(GET_CLIENT_PROFILE, fetchClientProfile)
+  yield takeEvery(ADD_NEW_CLIENT, onAddNewClient)
+  yield takeEvery(UPDATE_CLIENT, onUpdateClient)
+  yield takeEvery(DELETE_CLIENT, onDeleteClient)
 }
 
-export default clientsSaga;
+export default clientsSaga
