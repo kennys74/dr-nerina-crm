@@ -2,7 +2,7 @@ import React, { useMemo, useEffect } from "react"
 import TableContainer from "../../components/Common/TableContainer"
 import { useSelector, useDispatch } from "react-redux"
 import { getClients } from "/src/store/clients/actions"
-import { Input } from "reactstrap"
+import { Input, Card, CardBody, CardTitle } from "reactstrap"
 import Breadcrumbs from "/src/components/Common/Breadcrumb"
 
 function Dashboard() {
@@ -63,15 +63,20 @@ function Dashboard() {
     <div className="page-content">
       <div className="container-fluid">
         <Breadcrumbs title="Dashboard" breadcrumbItem="Dashboard" />
-        <TableContainer
-          columns={columns}
-          data={data}
-          isGlobalFilter={true}
-          isAddOptions={false}
-          customPageSize={10}
-          customPageSizeOptions={true}
-          className="custom-header-css"
-        />
+        <Card>
+          <CardBody>
+            <CardTitle className="mb-4">Clients</CardTitle>
+            <TableContainer
+              columns={columns}
+              data={data}
+              isGlobalFilter={true}
+              isAddOptions={false}
+              customPageSize={10}
+              customPageSizeOptions={true}
+              className="custom-header-css"
+            />
+          </CardBody>
+        </Card>
       </div>
     </div>
   )
