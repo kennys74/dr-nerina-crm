@@ -5,6 +5,7 @@ import { getClients } from "/src/store/clients/actions"
 import { Input, Card, CardBody, CardTitle } from "reactstrap"
 import { axiosGet } from "/src/helpers/api_helper"
 import { GET_CLIENT_MESSAGES } from "/src/helpers/url_helper"
+import MessageListModal from "../message-list-modal"
 
 function ClientList() {
   const dispatch = useDispatch()
@@ -12,12 +13,9 @@ function ClientList() {
   const { clients } = useSelector((x) => ({
     clients: x.clients.clients,
   }))
-  const [clientId, setClientId] = useState(null)
+  const [client, setClient] = useState(null)
   const [messages, setMessages] = useState([])
-  const [showMessageModal, setShowMessageModal] = useState(false)
-  console.warn("clientId", clientId)
-  console.warn("messages", messages)
-  console.warn("showMessageModal", showMessageModal)
+  const [showMessageListModal, setShowMessageListModal] = useState(false)
 
   useEffect(() => {
     if (clients && !clients.length) {
@@ -26,18 +24,15 @@ function ClientList() {
   }, [dispatch, clients])
 
   useEffect(() => {
-    if (clientId === null) {
+    if (client === null) {
       return
     }
-    const url = GET_CLIENT_MESSAGES(clientId)
+    const url = GET_CLIENT_MESSAGES(client._id)
     axiosGet(url).then((response) => {
-      console.warn("response", response)
       setMessages(response.data)
-      setShowMessageModal(true)
+      setShowMessageListModal(true)
     })
-  }, [clientId])
-
-  console.warn("client list", clients)
+  }, [client])
 
   const columns = useMemo(
     () => [
@@ -58,8 +53,7 @@ function ClientList() {
   )
 
   const onMessagesClick = (client) => {
-    console.warn("client", client)
-    setClientId(client._id)
+    setClient(client)
   }
 
   const data = clients.map((x, i) => {
@@ -91,6 +85,12 @@ function ClientList() {
           className="custom-header-css"
         />
       </CardBody>
+      <MessageListModal
+        showMessageListModal={showMessageListModal}
+        setShowMessageListModal={setShowMessageListModal}
+        client={client}
+        messages={messages}
+      />
     </Card>
   )
 }
