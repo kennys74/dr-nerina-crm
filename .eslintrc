@@ -1,6 +1,7 @@
 {
   "rules": {
-    "no-undef": "off"
+    "no-undef": "off",
+    "react/react-in-jsx-scope": "off"
   },
   "extends": [
     "plugin:react/recommended"
